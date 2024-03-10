@@ -1,0 +1,1025 @@
+{
+	"info": {
+		"_postman_id": "7c7770dc-bd8a-4918-b8db-166e7d8e44b1",
+		"name": "Library Management System Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29400293"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/Api/Books",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Books/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Books\": [\n        {\n            \"id\": 1,\n            \"title\": \"The Night Circus\",\n            \"author\": \"Erin Morgenstern\",\n            \"ISBN\": \"9780307744432\",\n            \"quantity\": 10,\n            \"shelf\": \"Fiction\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"A Brief History of Humankind\",\n            \"author\": \"Yuval Noah Harari\",\n            \"ISBN\": \"9780062316110\",\n            \"quantity\": 8,\n            \"shelf\": \"Non-fiction\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"A Memoir\",\n            \"author\": \"Tara Westover\",\n            \"ISBN\": \"9780399590504\",\n            \"quantity\": 6,\n            \"shelf\": \"Biography\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"The Alchemist\",\n            \"author\": \"Paulo Coelho\",\n            \"ISBN\": \"9780061122415\",\n            \"quantity\": 15,\n            \"shelf\": \"Fiction\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Thinking, Fast and Slow\",\n            \"author\": \"Daniel Kahneman\",\n            \"ISBN\": \"9780374533557\",\n            \"quantity\": 9,\n            \"shelf\": \"Psychology\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"To Kill a Mockingbird\",\n            \"author\": \"Harper Lee\",\n            \"ISBN\": \"9780061120084\",\n            \"quantity\": 7,\n            \"shelf\": \"Classic\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"The Girl on the Train\",\n            \"author\": \"Paula Hawkins\",\n            \"ISBN\": \"9781594634024\",\n            \"quantity\": 11,\n            \"shelf\": \"Mystery/Thriller\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Why We Do What We Do in Life and Business\",\n            \"author\": \"Charles Duhigg\",\n            \"ISBN\": \"9780812981605\",\n            \"quantity\": 10,\n            \"shelf\": \"Business/Personal Development\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"1984\",\n            \"author\": \"George Orwell\",\n            \"ISBN\": \"9780451524935\",\n            \"quantity\": 5,\n            \"shelf\": \"Dystopian Fiction\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"ISBN\": \"9780316769488\",\n            \"quantity\": 7,\n            \"shelf\": \"Classic\"\n        },\n        {\n            \"id\": 11,\n            \"title\": \"The Martian\",\n            \"author\": \"Andy Weir\",\n            \"ISBN\": \"9780553418026\",\n            \"quantity\": 9,\n            \"shelf\": \"Science Fiction\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Books By Title",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Books?title=A Brief History of Humankind",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "A Brief History of Humankind"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Books\": [\n        {\n            \"id\": 2,\n            \"title\": \"A Brief History of Humankind\",\n            \"author\": \"Yuval Noah Harari\",\n            \"ISBN\": \"9780062316110\",\n            \"quantity\": 8,\n            \"shelf\": \"Non-fiction\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Books By Author",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Books/?author=George Orwell",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books",
+										""
+									],
+									"query": [
+										{
+											"key": "author",
+											"value": "George Orwell"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Books\": [\n        {\n            \"id\": 9,\n            \"title\": \"1984\",\n            \"author\": \"George Orwell\",\n            \"ISBN\": \"9780451524935\",\n            \"quantity\": 5,\n            \"shelf\": \"Dystopian Fiction\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Books By ISBN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Books?ISBN=9780061120084",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books"
+									],
+									"query": [
+										{
+											"key": "ISBN",
+											"value": "9780061120084"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"Books\": [\r\n        {\r\n            \"id\": 6,\r\n            \"title\": \"To Kill a Mockingbird\",\r\n            \"author\": \"Harper Lee\",\r\n            \"ISBN\": \"9780061120084\",\r\n            \"quantity\": 7,\r\n            \"shelf\": \"Classic\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Martian\",\r\n    \"author\": \"Andy Weir\",\r\n    \"ISBN\": \"9780553418026\",\r\n    \"quantity\": 9,\r\n    \"shelf\": \"Science Fiction\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Books/Book/AddBook",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Books",
+								"Book",
+								"AddBook"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"The Alchemist\",\r\n    \"author\": \"Paulo Coelho\",\r\n    \"ISBN\": \"9780061122415\",\r\n    \"quantity\": 15,\r\n    \"shelf\": \"Fiction\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Books/Book/AddBook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books",
+										"Book",
+										"AddBook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Book added successfully\",\n    \"Book\": {\n        \"id\": 1,\n        \"title\": \"The Night Circus\",\n        \"author\": \"Erin Morgenstern\",\n        \"ISBN\": \"9780307744432\",\n        \"quantity\": 10,\n        \"shelf\": \"Fiction\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Books/Book/UpdateBook/7",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Books",
+								"Book",
+								"UpdateBook",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Book",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"quantity\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Books/Book/UpdateBook/7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books",
+										"Book",
+										"UpdateBook",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Book with id 7 updated successfully\",\n    \"Book\": {\n        \"id\": 7,\n        \"title\": \"The Girl on the Train\",\n        \"author\": \"Paula Hawkins\",\n        \"ISBN\": \"9781594634024\",\n        \"quantity\": 8,\n        \"shelf\": \"Mystery/Thriller\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/Api/Books/Book/DeleteBook/11",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Books",
+								"Book",
+								"DeleteBook",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Book",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Books/Book/DeleteBook/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Books",
+										"Book",
+										"DeleteBook",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"Message\": \"Book with id 11 deleted successfully\",\r\n    \"Book\": {\r\n        \"id\": 11,\r\n        \"title\": \"The Martian\",\r\n        \"author\": \"Andy Weir\",\r\n        \"ISBN\": \"9780553418026\",\r\n        \"quantity\": 9,\r\n        \"shelf\": \"Science Fiction\"\r\n    }\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Borrowers",
+			"item": [
+				{
+					"name": "Get Borrowers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowers",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Borrowers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Borrowers\": [\n        {\n            \"id\": 1,\n            \"name\": \"Abdallah Montaser Hassan\",\n            \"email\": \"abdallahmontaser71@gmail.com\",\n            \"registeredAt\": \"2024-03-10T11:46:31.645Z\",\n            \"borrowings\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Youssef Montaser Hassan\",\n            \"email\": \"youssefmontaser71@gmail.com\",\n            \"registeredAt\": \"2024-03-10T11:47:22.331Z\",\n            \"borrowings\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Hassan Montaser Hassan\",\n            \"email\": \"hassanmontaser71@gmail.com\",\n            \"registeredAt\": \"2024-03-10T11:47:32.077Z\",\n            \"borrowings\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Amr Montaser Hassan\",\n            \"email\": \"amrmontaser71@gmail.com\",\n            \"registeredAt\": \"2024-03-10T11:47:38.317Z\",\n            \"borrowings\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Current Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowers/Borrower/1/CurrentBooks",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowers",
+								"Borrower",
+								"1",
+								"CurrentBooks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Current Books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowers/Borrower/2/CurrentBooks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowers",
+										"Borrower",
+										"2",
+										"CurrentBooks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Books\": [\n        {\n            \"id\": 1,\n            \"title\": \"The Night Circus\",\n            \"author\": \"Erin Morgenstern\",\n            \"dueDate\": \"2024-03-15T00:00:00.000Z\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"A Memoir\",\n            \"author\": \"Tara Westover\",\n            \"dueDate\": \"2024-03-17T00:00:00.000Z\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"The Alchemist\",\n            \"author\": \"Paulo Coelho\",\n            \"dueDate\": \"2024-03-18T00:00:00.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Thinking, Fast and Slow\",\n            \"author\": \"Daniel Kahneman\",\n            \"dueDate\": \"2024-03-19T00:00:00.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Borrower",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Amr Montaser Hassan\",\r\n    \"email\": \"amrmontaser71@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowers/Borrower/RegisterBorrower",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowers",
+								"Borrower",
+								"RegisterBorrower"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Borrower",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Abdallah Montaser Hassan\",\r\n    \"email\": \"abdallahmontaser71@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowers/Borrower/RegisterBorrower",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowers",
+										"Borrower",
+										"RegisterBorrower"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Borrower added successfully\",\n    \"Borrower\": {\n        \"id\": 1,\n        \"name\": \"Abdallah Montaser Hassan\",\n        \"email\": \"abdallahmontaser71@gmail.com\",\n        \"registeredAt\": \"2024-03-10T11:46:31.645Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Borrower",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"amrmontaser@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowers/Borrower/UpdateBorrower/4",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowers",
+								"Borrower",
+								"UpdateBorrower",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Borrower",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"amrmontaser@test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowers/Borrower/UpdateBorrower/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowers",
+										"Borrower",
+										"UpdateBorrower",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Borrower with id 4 updated successfully\",\n    \"Borrower\": {\n        \"id\": 4,\n        \"name\": \"Amr Montaser Hassan\",\n        \"email\": \"amrmontaser@test.com\",\n        \"registeredAt\": \"2024-03-10T11:47:38.317Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Borrower",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowers/Borrower/DeleteBorrower/4",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowers",
+								"Borrower",
+								"DeleteBorrower",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Borrower",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowers/Borrower/DeleteBorrower/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowers",
+										"Borrower",
+										"DeleteBorrower",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Borrower with id 4 deleted successfully\",\n    \"Borrower\": {\n        \"id\": 4,\n        \"name\": \"Amr Montaser Hassan\",\n        \"email\": \"amrmontaser@test.com\",\n        \"registeredAt\": \"2024-03-10T11:47:38.317Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Borrowing",
+			"item": [
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 5,\r\n    \"borrowerId\": 1,\r\n    \"dueDate\": \"2024-03-19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowing/CheckoutBook",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowing",
+								"CheckoutBook"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Checkout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\": 1,\r\n    \"borrowerId\": 1,\r\n    \"dueDate\": \"2024-03-15\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowing/CheckoutBook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowing",
+										"CheckoutBook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Book checked out successfully'\",\n    \"Borrowing\": {\n        \"id\": 1,\n        \"borrowedAt\": \"2024-03-10T11:53:59.020Z\",\n        \"returnedAt\": null,\n        \"dueDate\": \"2024-03-15T00:00:00.000Z\",\n        \"status\": \"CHECKED_OUT\",\n        \"bookId\": 1,\n        \"borrowerId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Return",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"borrowingId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowing/ReturnBook",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowing",
+								"ReturnBook"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"borrowingId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowing/ReturnBook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowing",
+										"ReturnBook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Book returned successfully\",\n    \"updatedBorrowing\": {\n        \"id\": 2,\n        \"borrowedAt\": \"2024-03-10T11:54:52.116Z\",\n        \"returnedAt\": \"2024-03-10T11:56:21.992Z\",\n        \"dueDate\": \"2024-03-16T00:00:00.000Z\",\n        \"status\": \"RETURNED\",\n        \"bookId\": 2,\n        \"borrowerId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Borrowed Books CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2024-03-01\",\r\n    \"endDate\": \"2024-03-11\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowing/BorrowedBooks",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowing",
+								"BorrowedBooks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Borrowed Books CSV",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startDate\": \"2024-03-01\",\r\n    \"endDate\": \"2024-03-11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowing/BorrowedBooks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowing",
+										"BorrowedBooks"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "\"BookID\",\"Title\",\"Author\",\"BorrowerName\",\"BorrowedAt\",\"DueDate\",\"Status\"\r\n1,\"The Night Circus\",\"Erin Morgenstern\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:53:59.020Z\",\"2024-03-15T00:00:00.000Z\",\"CHECKED_OUT\"\r\n2,\"A Brief History of Humankind\",\"Yuval Noah Harari\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:54:52.116Z\",\"2024-03-16T00:00:00.000Z\",\"RETURNED\"\r\n3,\"A Memoir\",\"Tara Westover\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:55:00.405Z\",\"2024-03-17T00:00:00.000Z\",\"CHECKED_OUT\"\r\n4,\"The Alchemist\",\"Paulo Coelho\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:55:06.237Z\",\"2024-03-18T00:00:00.000Z\",\"CHECKED_OUT\"\r\n5,\"Thinking, Fast and Slow\",\"Daniel Kahneman\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:55:30.484Z\",\"2024-03-19T00:00:00.000Z\",\"CHECKED_OUT\""
+						}
+					]
+				},
+				{
+					"name": "Overdue Books CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2024-03-01\",\r\n    \"endDate\": \"2024-03-11\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/Api/Borrowing/OverdueBooks",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"Api",
+								"Borrowing",
+								"OverdueBooks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Overdue Books CSV",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startDate\": \"2024-03-01\",\r\n    \"endDate\": \"2024-03-11\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Api/Borrowing/OverdueBooks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Api",
+										"Borrowing",
+										"OverdueBooks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "\"BookID\",\"Title\",\"Author\",\"BorrowerName\",\"BorrowedAt\",\"DueDate\",\"Status\"\r\n3,\"A Memoir\",\"Tara Westover\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:55:00.405Z\",\"2024-03-07T00:00:00.000Z\",\"CHECKED_OUT\"\r\n4,\"The Alchemist\",\"Paulo Coelho\",\"Abdallah Montaser Hassan\",\"2024-03-10T11:55:06.237Z\",\"2024-03-08T00:00:00.000Z\",\"CHECKED_OUT\""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
