@@ -7,6 +7,7 @@
 2. Database Configuration:
     • Set up your MySQL database and configure the connection details in a .env file. Ensure you have the   necessary permissions.
     • Populate the .env file with the following variables:
+                PORT=your_port
                 DB_USER=your_database_username
                 DB_PASSWORD=your_database_password
                 DB_HOST=your_database_host

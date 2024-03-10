@@ -6,7 +6,7 @@ import {
 import { StatusCodes } from 'http-status-codes/build/cjs/status-codes.js';
 
 const findBookById = async (id) => {
-    return await prisma.book.findUniqueOrThrow({
+    return await prisma.book.findUnique({
         where: {
             id: id,
         }
@@ -16,7 +16,7 @@ const isExistTitle = async (id, title) => {
     let whereCondition = {
         title: title,
     };
-    if (id !== undefined && id !== null) {
+    if (id) {
         whereCondition.NOT = {
             id: id,
         };
